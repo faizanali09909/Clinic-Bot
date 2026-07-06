@@ -1,18 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-# ── Register pages ──
-pg = st.navigation([
-    st.Page("app.py", title="Home"),
-    st.Page("pages/login.py", title="Login"),
-    st.Page("pages/signup.py", title="Sign Up"),
-    st.Page("pages/home.py", title="Dashboard"),
-    st.Page("pages/Dashboard.py", title="Clinic Setup"),
-    st.Page("pages/chatbot.py", title="Chatbot"),
-    st.Page("pages/widget.py", title="Widget"),
-    st.Page("pages/public_chat.py", title="Public Chat"),
-], position="hidden")
-pg.run()
+
 
 st.set_page_config(
     page_title="ClinicBot",
