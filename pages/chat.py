@@ -51,7 +51,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 GROQ_MODEL   = "llama-3.3-70b-versatile"
 
 # ── Get clinic ID from URL ──
