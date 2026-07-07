@@ -43,6 +43,9 @@ clinic = st.session_state.clinic
 clinic_id = clinic["id"]
 clinic_name = clinic["clinic_name"]
 
+# ── Your live Streamlit app base URL ──
+APP_BASE_URL = "https://clinic-bot-d6vvszrnmmqkmzk6htype2.streamlit.app"
+
 # ── Navbar ──
 col1, col2, col3, col4, col5, col6 = st.columns([4, 1, 1, 1, 1, 1])
 with col1:
@@ -103,14 +106,14 @@ with main_col:
     clinicName: "{clinic_name}"
   }};
 </script>
-<script src="https://your-clinicbot-domain.com/widget.js"></script>"""
+<script src="{APP_BASE_URL}/widget.js"></script>"""
 
     st.code(widget_code, language="html")
 
     st.markdown("<br>", unsafe_allow_html=True)
 
     # ── Shareable Link — Basic ✅ ──
-    shareable_link = f"https://your-clinicbot-domain.com/chat?clinic={clinic_id}"
+    shareable_link = f"{APP_BASE_URL}/chat?clinic={clinic_id}"
 
     st.markdown(f"""
         <div style='background:#111; border:0.5px solid #222; border-radius:12px;

@@ -1,6 +1,6 @@
+import os
 import sqlite3
 import hashlib
-import os
 
 # ── Use /tmp on Streamlit Cloud ──
 if os.path.exists("/mount/src"):
@@ -47,7 +47,7 @@ def create_clinic(clinic_name, email, password, plan="basic"):
     except Exception as e:
         print(f"Error: {e}")
         return None
-    
+
 def get_clinic_by_email(email):
     conn = get_connection()
     cursor = conn.cursor()
