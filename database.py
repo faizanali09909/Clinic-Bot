@@ -1,3 +1,5 @@
+import sqlite3
+import hashlib
 import os
 
 # ── Use /tmp on Streamlit Cloud ──
