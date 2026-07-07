@@ -1,8 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
 
-
-
 st.set_page_config(
     page_title="ClinicBot",
     page_icon="🤖",
@@ -92,17 +90,11 @@ with col1:
     st.markdown("<div style='padding:14px 0 14px 24px; font-size:20px; font-weight:600; color:#fff;'><span style='color:#7f77dd'>Clinic</span>Bot</div>", unsafe_allow_html=True)
 with col2:
     if st.button("Login", key="nav_login", use_container_width=True):
-        try:
-            st.switch_page("pages/login.py")
-        except:
-            st.switch_page("login.py")
+        st.switch_page("pages/login.py")
 with col3:
     if st.button("Sign Up", key="nav_signup", use_container_width=True):
         st.session_state["selected_plan"] = "basic"
-        try:
-            st.switch_page("pages/signup.py")
-        except:
-            st.switch_page("signup.py")
+        st.switch_page("pages/signup.py")
 with col4:
     st.markdown("")
 
@@ -353,24 +345,15 @@ _, b1, b2, b3, _ = st.columns([0.5, 1, 1, 1, 0.5])
 with b1:
     if st.button("Sign Up — Basic", use_container_width=True, key="plan_basic"):
         st.session_state["selected_plan"] = "basic"
-        try:
-            st.switch_page("pages/signup.py")
-        except:
-            st.switch_page("signup.py")
+        st.switch_page("pages/signup.py")
 with b2:
     if st.button("Sign Up — Pro", use_container_width=True, key="plan_pro"):
         st.session_state["selected_plan"] = "pro"
-        try:
-            st.switch_page("pages/signup.py")
-        except:
-            st.switch_page("signup.py")
+        st.switch_page("pages/signup.py")
 with b3:
     if st.button("Sign Up — Premium", use_container_width=True, key="plan_premium"):
         st.session_state["selected_plan"] = "premium"
-        try:
-            st.switch_page("pages/signup.py")
-        except:
-            st.switch_page("signup.py")
+        st.switch_page("pages/signup.py")
 
 st.markdown("""
     <div style='text-align:center; padding:2rem; font-size:13px; color:#444;
