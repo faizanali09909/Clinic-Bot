@@ -1,16 +1,15 @@
 import hashlib
-import os
+import streamlit as st
 from supabase import create_client, Client
 
 # ── Supabase connection ──
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
 SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 
-import streamlit as st
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 def init_db():
-    pass  # Tables are created in Supabase dashboard
+    pass
 
 def hash_password(password):
     return hashlib.sha256(password.encode()).hexdigest()
@@ -25,7 +24,7 @@ def create_clinic(clinic_name, email, password, plan="basic"):
         }).execute()
         if result.data:
             clinic = result.data[0]
-            return {"id": clinic["id"], "clinic_name": clinic["clinic_name"], 
+            return {"id": clinic["id"], "clinic_name": clinic["clinic_name"],
                     "email": clinic["email"], "plan": clinic["plan"]}
         return None
     except Exception as e:
@@ -65,6 +64,3 @@ def update_plan(clinic_id, plan):
 
 def get_connection():
     return supabase
-
-def init_db():
-    pass
